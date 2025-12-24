@@ -3,8 +3,9 @@
 module window(input clk,input rst_n,output reg window_done );
     
     parameter CLK_SPEED = 100_000_000;
-    parameter MS = 0.1;
-    parameter LIM = (MS*CLK_SPEED)/1000;
+    // parameter MS = 0.1;
+    // parameter LIM = (MS*CLK_SPEED)/1000;
+    parameter LIM = 10_000;
     reg [31:0]ct;
     always @( posedge clk or negedge rst_n) begin
         if (!rst_n) begin
