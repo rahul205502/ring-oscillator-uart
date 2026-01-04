@@ -1,12 +1,36 @@
 
 set_property PACKAGE_PIN W5 [get_ports clk]
 set_property IOSTANDARD LVCMOS33 [get_ports clk]
-## create_clock -period 10.000 -name sys_clk -waveform {0.000 5.000} [get_ports clk]
-
-set_property PACKAGE_PIN U18 [get_ports rst_n]
-set_property IOSTANDARD LVCMOS33 [get_ports rst_n]
+create_clock -period 10.000 -name sys_clk -waveform {0.000 5.000} [get_ports clk]
 
 set_property PACKAGE_PIN A18 [get_ports tx]
 set_property IOSTANDARD LVCMOS33 [get_ports tx]
 
-set_property ALLOW_COMBINATORIAL_LOOPS true [get_nets -hierarchical *op*]
+set_property PACKAGE_PIN R2 [get_ports {preset_val[7]}]
+set_property PACKAGE_PIN T1 [get_ports {preset_val[6]}]
+set_property PACKAGE_PIN U1 [get_ports {preset_val[5]}]
+set_property PACKAGE_PIN W2 [get_ports {preset_val[4]}]
+set_property PACKAGE_PIN R3 [get_ports {preset_val[3]}]
+set_property PACKAGE_PIN T2 [get_ports {preset_val[2]}]
+set_property PACKAGE_PIN T3 [get_ports {preset_val[1]}]
+set_property PACKAGE_PIN V2 [get_ports {preset_val[0]}]
+set_property PACKAGE_PIN V17 [get_ports en]
+set_property PACKAGE_PIN V16 [get_ports preset_en]
+set_property PACKAGE_PIN U18 [get_ports rst]
+set_property IOSTANDARD LVCMOS33 [get_ports {preset_val[7]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {preset_val[6]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {preset_val[5]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {preset_val[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {preset_val[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {preset_val[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {preset_val[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {preset_val[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports en]
+set_property IOSTANDARD LVCMOS33 [get_ports preset_en]
+set_property IOSTANDARD LVCMOS33 [get_ports rst]
+
+# Config voltage (Basys3)
+set_property CFGBVS VCCO [current_design]
+set_property CONFIG_VOLTAGE 3.3 [current_design]
+
+set_property ALLOW_COMBINATORIAL_LOOPS TRUE [get_nets -hierarchical w[5]]
